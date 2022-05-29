@@ -9,7 +9,7 @@
     background: url('../../../assets/Home/main-background.png') no-repeat;
     background-size: cover;
     background-position: 28%;
-    background-color: $dark;
+    background-color: black;
     display: flex;
     align-items: center;
     position: relative;
@@ -24,7 +24,7 @@
 }
 
 .main-titles {
-    margin: .6in 0 .8in 0;
+    margin: .5in 0 1in 0;
     h1,
     h2 {
         color: $light;

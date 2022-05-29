@@ -7,7 +7,7 @@
   background: url("../../../assets/Home/main-background.png") no-repeat;
   background-size: cover;
   background-position: 28%;
-  background-color: #181818;
+  background-color: black;
   display: flex;
   align-items: center;
   position: relative;
@@ -21,7 +21,7 @@
 }
 
 .main-titles {
-  margin: 0.6in 0 0.8in 0;
+  margin: 0.5in 0 1in 0;
 }
 .main-titles h1,
 .main-titles h2 {
