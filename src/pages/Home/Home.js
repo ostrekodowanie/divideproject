@@ -55,7 +55,7 @@ function Advantages() {
                 <div className="advantage-div">
                 <img src={advTwo} alt="" />
                     <h2>Our abilities</h2>
-                    <p>Our capabilities allow us to create a website that is fully tailored to the needs of your Company. Our capabilities allow us to create a website that is fully tailored to the needs of your Company.</p>
+                    <p>Our capabilities allow us to create a website that is fully tailored to the needs of your Company.</p>
                 </div>
             </div>
         </section>
