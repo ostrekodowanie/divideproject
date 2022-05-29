@@ -56,6 +56,7 @@
 }
 .main-buttons a:last-child {
   border: 1px solid rgba(58, 134, 255, 0.4);
+  color: #3A86FF;
 }
 
 .s-description,
