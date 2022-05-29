@@ -1,25 +1,58 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import Home from './pages/Home/Home';
+import './sass/App.css';
+import { Routes, Route } from 'react-router-dom';
+import { useLocation } from 'react-router';
+import { useState, useEffect } from "react";
 
-function App() {
+export default function App() {
+  const [overlayActive, setOverlay] = useState(false)
+
+  let screenHeight = window.document.documentElement.clientHeight
+  const [height, setHeight] = useState(screenHeight)
+
+  const currentState = (navbarState) => {
+    setOverlay(navbarState)
+  }
+
+  const disableNav = () => {
+    setOverlay(false)
+  }
+  
+  let heightCallback = () => {
+      screenHeight = window.document.documentElement.clientHeight
+      setHeight(screenHeight)
+  }
+
+  useEffect(() => {
+      window.addEventListener('resize', heightCallback)
+      return () => {
+          window.removeEventListener('resize', heightCallback)
+      }
+  }, [height])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="wrapper">
+      <Header currentState={currentState} overlay={overlayActive} height={height} />
+      <main>
+        <div className={overlayActive ? "overlay active" : "overlay"} onClick={disableNav} onTouchMove={disableNav}></div>
+        <ScrollToTop>
+          <Routes>
+            <Route path="/" element={<Home overlay={overlayActive} height={height} />} />
+          </Routes>
+        </ScrollToTop>
+      </main>
+      <Footer />
     </div>
   );
 }
 
-export default App;
+const ScrollToTop = (props) => {
+  const location = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
+  return <>{props.children}</>
+}

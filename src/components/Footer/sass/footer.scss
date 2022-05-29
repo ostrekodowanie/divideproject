@@ -1,0 +1,55 @@
+@import '../../../variables';
+
+.footer {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-segment {
+    background-color: $dark;
+    padding: 2rem 0;
+    ul {
+        padding: 0;
+        list-style: none;
+        text-align: center;
+        a {
+            line-height: 2em;
+            text-decoration: none;
+            color: $light;
+        }
+    }
+    
+    & > a {
+        margin-top: 1rem;
+    }
+
+    &:first-child {
+        background-color: #232323;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &:last-child {
+        min-height: 1.4in;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+    }
+}
+
+.footer-rules {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    a {
+        text-decoration: $grey;
+        color: #A9A9A9;
+    }
+    div {
+        height: 1.2em;
+        width: 1px;
+        background-color: $grey;
+    }
+}
