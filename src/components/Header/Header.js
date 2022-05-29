@@ -28,9 +28,9 @@ export default function Header({ currentState, overlay, height }) {
                 </div>
                 <nav className={currentNavbar ? 'navbar nav-active' : 'navbar'} style={{minHeight: height}}>
                     <CustomLink to="/" className='active' onClick={showNav}>HOME</CustomLink>     
-                    <CustomLink to="/o-nas" onClick={showNav}>ABOUT US</CustomLink>     
-                    <CustomLink to="/nasza-misja" onClick={showNav}>PORTFOLIO</CustomLink>     
-                    <CustomLink to="/kontakt" onClick={showNav}>CONTACT US</CustomLink>     
+                    <CustomLink to="/about-us" onClick={showNav}>ABOUT US</CustomLink>     
+                    <CustomLink to="/portfolio" onClick={showNav}>PORTFOLIO</CustomLink>     
+                    <CustomLink to="/contact" onClick={showNav}>CONTACT US</CustomLink>     
                 </nav>
             </header>
         </div>
