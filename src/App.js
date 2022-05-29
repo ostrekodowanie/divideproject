@@ -20,7 +20,7 @@ export default function App() {
     setOverlay(false)
   }
   
-  let heightCallback = () => {
+  const heightCallback = () => {
       screenHeight = window.document.documentElement.clientHeight
       setHeight(screenHeight)
   }
