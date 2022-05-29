@@ -57,6 +57,12 @@
     a:first-child {
         background-color: $primary;
         color: $light;
+        display: flex;
+        align-items: center;
+        img {
+            max-height: 1em;
+            margin-left: .6em;
+        }
     }
     a:last-child {
         border: 1px solid rgba($primary, 0.4);

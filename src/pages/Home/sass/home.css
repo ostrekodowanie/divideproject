@@ -53,6 +53,12 @@
 .main-buttons a:first-child {
   background-color: #3A86FF;
   color: #FFFFFF;
+  display: flex;
+  align-items: center;
+}
+.main-buttons a:first-child img {
+  max-height: 1em;
+  margin-left: 0.6em;
 }
 .main-buttons a:last-child {
   border: 1px solid rgba(58, 134, 255, 0.4);

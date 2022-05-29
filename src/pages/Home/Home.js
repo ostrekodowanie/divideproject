@@ -3,6 +3,7 @@ import arrowDown from '../../assets/Home/arrow-down.png'
 import www from '../../assets/Home/WWW.png'
 import advOne from '../../assets/Home/adv1.png'
 import advTwo from '../../assets/Home/adv2.png'
+import buttonArrow from '../../assets/Home/button-arrow.png'
 import { Link } from "react-router-dom";
 
 export default function Home({height}) {
@@ -22,7 +23,7 @@ function Landing({ height }) {
                 <h1>We create website experiences.</h1>
                 <h2>Get the website you would expect to have.</h2>
                 <div className="main-buttons">
-                    <Link to="/contact-us">CONTACT US</Link>
+                    <Link to="/contact-us">CONTACT US<img src={buttonArrow} alt="" /></Link>
                     <Link to="/portfolio">VIEW PORTFOLIO</Link>
                 </div>
             </div>
