@@ -1,6 +1,7 @@
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Home from './pages/Home/Home';
+import Contact from './pages/Contact/Contact';
 import './sass/App.css';
 import { Routes, Route } from 'react-router-dom';
 import { useLocation } from 'react-router';
@@ -40,6 +41,7 @@ export default function App() {
         <ScrollToTop>
           <Routes>
             <Route path="/" element={<Home overlay={overlayActive} height={height} />} />
+            <Route path="/contact" element={<Contact overlay={overlayActive} height={height} />} />
           </Routes>
         </ScrollToTop>
       </main>
