@@ -1,6 +1,7 @@
 import './sass/contact.css';
 import envelope from '../../assets/Contact/envelope.svg';
 import phone from '../../assets/Contact/phone.svg';
+import send from '../../assets/Contact/send.svg';
 
 export default function Contact({ height }) {
     return (
@@ -17,9 +18,10 @@ export default function Contact({ height }) {
                         <label for="message">Message</label>
                         <textarea id="message" name='email' placeholder="Type your message" />
                     </div>
-                    <button type="submit">Spierdalaj stad kretynska palo</button>
+                    <button type="submit">Send<img src={send} alt="" /></button>
                 </div>
             </form>
+            <div className="horizontal-line"></div>
             <div className="contact-info">
                 <div><img src={envelope} alt="" /><span>divideproject.business@gmail.com</span></div>
                 <div>

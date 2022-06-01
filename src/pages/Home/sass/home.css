@@ -80,6 +80,7 @@
   background: url("../../../assets/Home/descrip-background.png") no-repeat;
   background-size: contain;
   background-color: #181818;
+  padding-top: 1in;
 }
 
 .description {

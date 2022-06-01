@@ -14,7 +14,7 @@
 }
 
 .form {
-  margin-top: 2rem;
+  margin-top: 3rem;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -45,14 +45,34 @@
 }
 .form button {
   align-self: flex-end;
+  display: flex;
+  align-items: center;
   margin-top: 0.6em;
   padding: 0.6em 2em;
+  background-color: #3A86FF;
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 95%;
+  border-radius: 0.5em;
+  cursor: pointer;
+  border: 1px solid #3A86FF;
+}
+.form button img {
+  max-height: 0.9em;
+  margin-left: 0.5em;
+}
+
+.horizontal-line {
+  height: 1px;
+  border-radius: 50%;
+  background-color: rgba(169, 169, 169, 0.5);
+  margin: 3rem 0;
 }
 
 .contact-info {
-  margin-top: 3rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 2rem;
   color: #A9A9A9;
 }
@@ -60,10 +80,10 @@
   max-height: 1.5em;
   max-width: 1.5em;
   margin-bottom: 0.5em;
-  align-self: flex-start;
 }
 .contact-info div {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 0.4em;
 }/*# sourceMappingURL=contact.css.map */
