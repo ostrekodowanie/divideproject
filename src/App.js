@@ -31,7 +31,7 @@ export default function App() {
       return () => {
           window.removeEventListener('resize', heightCallback)
       }
-  }, [height])
+  })
 
   return (
     <div className="wrapper">

@@ -11,11 +11,11 @@ export default function Contact({ height }) {
             <form>
                 <div className="form">
                     <div className="input-div">
-                        <label for="email">Email address</label>
+                        <label htmlFor="email">Email address</label>
                         <input type="email" id="email" name='email' placeholder="Type your email" />
                     </div>
                     <div className="input-div">
-                        <label for="message">Message</label>
+                        <label htmlFor="message">Message</label>
                         <textarea id="message" name='email' placeholder="Type your message" />
                     </div>
                     <button type="submit">Send<img src={send} alt="" /></button>

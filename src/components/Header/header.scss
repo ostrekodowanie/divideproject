@@ -80,8 +80,8 @@
         right: 0;
         top: 0;
         z-index: 2;
-    width: 2in;
-    background-color: rgba(black, 0.9);
+    width: 100vw;
+    background-color: rgba(black, 0.95);
     transform: translateX(100%);
     transition: all 400ms ease;
     a {
@@ -98,6 +98,47 @@
 }
 
 .nav-active {
+    position: fixed;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     transform: translateX(0%);
+}
+
+@media all and (min-width: 640px) {
+    .header {
+        padding: 0 12vw;
+        min-height: 6rem;
+        img {
+            max-width: 1.4in;
+        }
+    }
+    .navbar {
+        width: 40vw;
+    }
+}
+
+@media all and (min-width: 1080px) {
+    .s-landing {
+        background-position-y: top !important;
+    }
+    .header {
+        img {
+            max-width: 1.5in;
+        }
+    }
+
+    .burger {
+        display: none;
+    }
+
+    .navbar {
+        position: relative;
+        background-color: transparent;
+        box-shadow: none;
+        flex-direction: row;
+        gap: min(calc(1rem + 5vw), 1in);
+        width: auto;
+        padding: 0;
+        transition: none;
+        transform: translateX(0%);
+    }
 }

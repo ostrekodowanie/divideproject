@@ -30,7 +30,7 @@
 .main-titles h1 {
   font-weight: 600;
   font-size: 2.5rem;
-  margin: 1.2em 0;
+  margin: 0.6em 0 1.2em 0;
 }
 .main-titles h2 {
   display: none;
@@ -42,12 +42,13 @@
 
 .main-buttons {
   display: flex;
-  gap: 6vw;
   flex-wrap: wrap;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 1.1rem;
+  gap: min(6vw, 2.5rem);
 }
 .main-buttons a {
-  font-size: 1.1rem;
   text-decoration: none;
   padding: 0.5em 1em;
   border-radius: 0.2em;
@@ -97,6 +98,7 @@
   font-size: 1.1rem;
   border-top: 2px solid #A9A9A9;
   border-bottom: 2px solid #A9A9A9;
+  max-width: 5in;
 }
 
 .advantages-grid {
@@ -120,4 +122,29 @@
   font-size: 1.1rem;
   color: #A9A9A9;
   margin: 0;
+  max-width: 6in;
+}
+
+@media all and (min-width: 640px) {
+  .main-titles h1 {
+    font-size: 3rem;
+    max-width: 20ch;
+  }
+
+  .section {
+    padding: 3rem 12vw;
+  }
+}
+@media all and (min-width: 1080px) {
+  .main-titles {
+    margin-top: 5rem;
+    margin-bottom: 1.5in;
+  }
+  .main-titles h1 {
+    font-size: min(2.5rem + 1.5vw, 4.2rem);
+  }
+
+  .main-buttons {
+    font-size: min(1.1rem + 0.2vw, 1.4rem);
+  }
 }/*# sourceMappingURL=home.css.map */
