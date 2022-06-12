@@ -1,0 +1,58 @@
+.bg-wrapper {
+  min-height: 35vh;
+  padding: 1rem 10vw;
+  background: url("../../../assets/Portfolio/bg.png") no-repeat;
+  background-size: cover;
+  background-position: 50%;
+  display: flex;
+  align-items: flex-end;
+}
+.bg-wrapper h1 {
+  color: #FFFFFF;
+  font-weight: 500;
+  font-size: 2rem;
+}
+
+.projects {
+  padding-top: 0;
+}
+
+.projects-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.project {
+  padding: 0.9rem 0.9rem 0.7rem 0.9rem;
+  background-color: #232323;
+  color: #FFFFFF;
+  border-radius: 0.8rem;
+  display: flex;
+  flex-direction: column;
+}
+.project .link {
+  margin: 0.8em 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.stats {
+  color: #A9A9A9;
+  display: flex;
+  align-items: center;
+}
+.stats img {
+  max-height: 0.9em;
+  margin-right: 0.4em;
+}
+.stats p {
+  max-width: 100%;
+}
+.stats .dot {
+  margin: 0 1rem;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #A9A9A9;
+}/*# sourceMappingURL=portfolio.css.map */
