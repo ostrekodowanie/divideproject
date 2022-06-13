@@ -6,7 +6,7 @@ import Contact from './pages/Contact/Contact';
 import './sass/App.css';
 import { Routes, Route } from 'react-router-dom';
 import { useLocation } from 'react-router';
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 export default function App() {
   const [overlayActive, setOverlay] = useState(false)
@@ -18,9 +18,9 @@ export default function App() {
     setOverlay(navbarState)
   }
 
-  const disableNav = () => {
+  const disableNav = useCallback(() => {
     setOverlay(false)
-  }
+  }, [])
   
   const heightCallback = () => {
       screenHeight = window.document.documentElement.clientHeight
@@ -39,7 +39,7 @@ export default function App() {
       <Header currentState={currentState} overlay={overlayActive} height={height} />
       <main>
         <div className={overlayActive ? "overlay active" : "overlay"} onClick={disableNav} onTouchMove={disableNav}></div>
-        <ScrollToTop>
+        <ScrollToTop disableNav={disableNav}>
           <Routes>
             <Route path="/" element={<Home overlay={overlayActive} height={height} />} />
             <Route path="/portfolio" element={<Portfolio overlay={overlayActive} height={height} />} />
@@ -52,11 +52,12 @@ export default function App() {
   );
 }
 
-const ScrollToTop = (props) => {
+const ScrollToTop = ({ children, disableNav }) => {
   const location = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [location]);
+    disableNav();
+  }, [location, disableNav]);
 
-  return <>{props.children}</>
+  return <>{children}</>
 }

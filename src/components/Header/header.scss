@@ -117,10 +117,8 @@
 }
 
 @media all and (min-width: 1080px) {
-    .s-landing {
-        background-position-y: top !important;
-    }
     .header {
+        padding: 0 14vw;
         img {
             max-width: 1.5in;
         }
@@ -142,3 +140,4 @@
         transform: translateX(0%);
     }
 }
+

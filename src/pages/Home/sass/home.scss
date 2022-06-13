@@ -1,5 +1,9 @@
 @import '../../../variables';
 
+:root {
+    --custom-width: 0%;
+}
+
 .section {
     background-color: $dark;
     padding: 3rem 10vw;
@@ -60,16 +64,40 @@
     a:first-child {
         background-color: $primary;
         color: $light;
+        position: relative;
         display: flex;
         align-items: center;
+        transition: padding-right 150ms ease-out;
         img {
+            position: absolute;
+            right: 1em;
             max-height: 1em;
             margin-left: .6em;
+            opacity: 0;
+            transition: none;
+        }
+        &:hover {
+            padding-right: 3.5em;
+        }
+        &:hover img {
+            display: block;
+            animation: arrowSlide 150ms ease-out;
+            opacity: 1;
+            transition: opacity 300ms ease-out 40ms;
         }
     }
     a:last-child {
         border: 1px solid rgba($primary, 0.4);
         color: $primary;
+    }
+}
+
+@keyframes arrowSlide {
+    from {
+        transform: translateX(-50%);
+    }
+    to {
+        transform: translateX(0%);
     }
 }
 
@@ -84,7 +112,8 @@
 
 .s-description {
     background: url('../../../assets/Home/descrip-background.png') no-repeat;
-    background-size: contain;
+    background-size: cover;
+    background-position: 50%;
     background-color: $dark;
     padding-top: 1in;
 }
@@ -95,14 +124,27 @@
     flex-direction: column;
     align-items: center;
     img {
+        max-height: 1.3in;
+        max-width: 1.3in;
         margin-bottom: 1em;
     }
     p {
-        padding: 1em 0;
         font-size: 1.1rem;
-        border-top: 2px solid #A9A9A9;
-        border-bottom: 2px solid #A9A9A9;
         max-width: 5in;
+        display: flex;
+        flex-direction: column;
+    }
+    p::after,
+    p::before {
+        content: '';
+        width: var(--custom-width);
+        display: block;
+        height: 2px;
+        background-color: #A9A9A9;
+        margin: 1em 0;
+    }
+    p::before {
+        align-self: flex-end;
     }
 }
 
@@ -146,6 +188,12 @@
 }
 
 @media all and (min-width: 1080px) {
+    .s-landing {
+        background-position-y: top !important;
+    }
+    .section {
+        padding: 1.2in 14vw;
+    }
     .main-titles {
         margin-top: 5rem;
         margin-bottom: 1.5in;
@@ -155,5 +203,17 @@
     }
     .main-buttons {
         font-size: min(calc(1.1rem + .2vw), 1.4rem);
+    }
+
+    .description {
+        img {
+            max-height: 1.7in;
+            max-width: 1.7in;
+        }
+        p {
+            font-size: 1.4rem;
+            line-height: 2em;
+            max-width: 6in;
+        }
     }
 }

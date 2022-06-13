@@ -5,6 +5,9 @@ import advOne from '../../assets/Home/adv1.png'
 import advTwo from '../../assets/Home/adv2.png'
 import buttonArrow from '../../assets/Home/button-arrow.png'
 import { Link } from "react-router-dom";
+import gsap, {Power1} from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useRef, useEffect } from 'react';
 
 export default function Home({height}) {
     return (
@@ -33,9 +36,24 @@ function Landing({ height }) {
 }
 
 function Description() {
+    const desc = useRef(null)
+    gsap.registerPlugin(ScrollTrigger)
+
+    useEffect(() => {
+        gsap.to(':root', {
+            '--custom-width': '100%',
+            ease: Power1.easeOut,
+            duration: 1,
+            scrollTrigger: {
+                trigger: desc.current,
+                start: 'top center'
+            }
+        })
+    }, [])
+
     return (
         <section className="section s-description">
-            <div className="description">
+            <div ref={desc} className="description">
                 <img src={www} alt="" />
                 <p>We create professionally made websites that can be the future of your brands. Your project is the most important part of our company.</p>
             </div>
