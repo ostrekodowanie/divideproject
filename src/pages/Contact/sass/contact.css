@@ -86,4 +86,44 @@
   flex-direction: column;
   align-items: center;
   gap: 0.4em;
+}
+
+@media all and (min-width: 650px) {
+  .s-contact {
+    padding-top: 1.2in;
+  }
+
+  .form input {
+    max-width: calc(2in + 16vw);
+  }
+}
+@media all and (min-width: 1080px) {
+  .s-contact {
+    padding: 1.3in 30vw;
+  }
+  .s-contact h1 {
+    font-size: 3rem;
+  }
+  .s-contact h3 {
+    font-size: 1.3rem;
+  }
+
+  .form label {
+    font-size: 1.3rem;
+  }
+  .form input,
+.form textarea {
+    font-size: 1.1rem;
+  }
+  .form button {
+    font-size: 1.1rem;
+  }
+
+  .horizontal-line {
+    margin: 4rem 0;
+  }
+
+  .contact-info {
+    font-size: 1.2rem;
+  }
 }/*# sourceMappingURL=contact.css.map */

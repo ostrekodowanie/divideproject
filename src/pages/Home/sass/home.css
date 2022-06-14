@@ -217,7 +217,7 @@
   }
 
   .section {
-    padding: 1.2in 14vw;
+    padding: 5rem 14vw;
   }
 
   .main-titles {
@@ -232,6 +232,10 @@
     font-size: min(1.1rem + 0.2vw, 1.4rem);
   }
 
+  .s-description {
+    padding-top: 1.4in;
+  }
+
   .description img {
     max-height: 1.6in;
     max-width: 1.6in;
@@ -240,5 +244,19 @@
     font-size: 1.3rem;
     line-height: 2em;
     max-width: 6in;
+  }
+
+  .advantages-grid {
+    flex-direction: row;
+    gap: 1.5in;
+  }
+
+  .advantage-div h2 {
+    font-size: 2rem;
+  }
+  .advantage-div p {
+    font-size: 1.25rem;
+    line-height: 2em;
+    max-width: 5in;
   }
 }/*# sourceMappingURL=home.css.map */
