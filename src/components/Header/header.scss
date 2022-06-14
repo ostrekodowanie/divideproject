@@ -24,6 +24,7 @@
 }
 
 .logo {
+    margin-top: 1rem;
     a {
         text-decoration: none;
         font-size: 1.2rem;
@@ -136,6 +137,10 @@
         img {
             max-width: 1.5in;
         }
+    }
+    
+    .logo {
+        margin-top: 2rem;
     }
 
     .burger {

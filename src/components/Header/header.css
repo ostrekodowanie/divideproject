@@ -21,6 +21,9 @@
   margin-bottom: -6px;
 }
 
+.logo {
+  margin-top: 1rem;
+}
 .logo a {
   text-decoration: none;
   font-size: 1.2rem;
@@ -142,6 +145,10 @@
   }
   .header img {
     max-width: 1.5in;
+  }
+
+  .logo {
+    margin-top: 2rem;
   }
 
   .burger {
