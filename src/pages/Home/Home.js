@@ -4,6 +4,7 @@ import www from '../../assets/Home/WWW.png'
 import advOne from '../../assets/Home/adv1.png'
 import advTwo from '../../assets/Home/adv2.png'
 import buttonArrow from '../../assets/Home/button-arrow.png'
+import Logo from '../../assets/Logo.png';
 import { Link } from "react-router-dom";
 import gsap, {Power1} from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -19,16 +20,37 @@ export default function Home({height}) {
     )
 }
 
-function Landing({ height }) {
+function Landing({ height, location }) {
+    const title = useRef(null)
+    const buttons = useRef(null)
+
+    useEffect(() => {
+        let lines = title.current.querySelectorAll('.line')
+        let delayCounter = lines.length
+        lines.forEach(line => {
+            line.classList.remove('line-active')
+            line.classList.add('line-active')
+            buttons.current.classList.remove('active')
+            buttons.current.classList.add('active')
+            delayCounter--
+            line.style.transitionDelay = `calc(150ms * ${delayCounter})`
+        })
+    }, [])
+
     return (
         <section className="section s-landing" style={{minHeight: height}}>
             <div className="main-titles">
-                <h1>We create website experiences.</h1>
-                <h2>Get the website you would expect to have.</h2>
-                <div className="main-buttons">
+                <h1 ref={title}>
+                    <span className="line-wrapper"><span className="line">We create website </span></span> 
+                    <span className="line-wrapper"><span className="line">experiences.</span></span>
+                </h1>
+                <div ref={buttons} className="main-buttons">
                     <Link to="/contact-us">CONTACT US<img src={buttonArrow} alt="" /></Link>
                     <Link to="/portfolio">VIEW PORTFOLIO</Link>
                 </div>
+            </div>
+            <div className="landing-logo">
+                <Link to="/"><img src={Logo} alt="" /></Link>
             </div>
             <Link to="/" className="arrow-down"><img src={arrowDown} alt='' /></Link>
         </section>

@@ -88,12 +88,26 @@
         color: $light;
         text-decoration: none;
     }
-    a.active::after {
+    a.active::after,
+    a:hover::after {
         content: "";
         display: block;
-        height: 2px;
-        background-color: $primary;
-        margin-top: .3em;
+        height: 1px;
+        background-color: $light;
+        margin-top: .2em;
+        animation: linkSlide 150ms ease-out;
+    }
+    a.active::after {
+        animation: none;
+    }
+}
+
+@keyframes linkSlide {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
     }
 }
 
@@ -140,4 +154,3 @@
         transform: translateX(0%);
     }
 }
-
