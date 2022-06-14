@@ -7,6 +7,9 @@
   background-color: #181818;
   padding: 2rem 0;
 }
+.footer-segment img {
+  max-width: 3in;
+}
 .footer-segment ul {
   padding: 0;
   list-style: none;

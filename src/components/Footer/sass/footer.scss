@@ -8,6 +8,9 @@
 .footer-segment {
     background-color: $dark;
     padding: 2rem 0;
+    img {
+        max-width: 3in;
+    }
     ul {
         padding: 0;
         list-style: none;

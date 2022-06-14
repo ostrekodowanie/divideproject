@@ -9,8 +9,8 @@
 
 .s-landing {
   background: url("../../../assets/Home/main-background.png") no-repeat;
-  background-size: cover;
-  background-position: 28%;
+  background-size: 80% 100%;
+  background-position: 220% 0;
   background-color: #181818;
   display: flex;
   align-items: center;
