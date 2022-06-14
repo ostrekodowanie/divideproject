@@ -247,25 +247,5 @@
     }
 }
 
-@media all and (min-width: 1200px) {
-    .landing-logo {
-        margin-right: 2vw;
-        display: block;
-        justify-self: end;
-        width: 90%;
-        max-width: calc(1in + 16vw);
-    }
 
-    .header {
-        .logo {
-            opacity: 0;
-        }
-    }
 
-}
-
-@media all and (min-width: 1500px) {
-    .landing-logo {
-        margin-right: 6vw;
-    }
-}
