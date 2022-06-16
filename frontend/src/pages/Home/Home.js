@@ -4,7 +4,6 @@ import www from '../../assets/Home/WWW.png'
 import advOne from '../../assets/Home/adv1.png'
 import advTwo from '../../assets/Home/adv2.png'
 import buttonArrow from '../../assets/Home/button-arrow.png'
-import Logo from '../../assets/Logo.png';
 import { Link } from "react-router-dom";
 import gsap, {Power1} from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -48,9 +47,6 @@ function Landing({ height }) {
                     <Link to="/contact">START A PROJECT<img src={buttonArrow} alt="" /></Link>
                     <Link to="/portfolio"><span>VIEW PORTFOLIO</span><div className='button-background'></div></Link>
                 </div>
-            </div>
-            <div className="landing-logo">
-                <Link to="/"><img src={Logo} alt="" /></Link>
             </div>
             <Link to="/" className="arrow-down"><img src={arrowDown} alt='' /></Link>
         </section>

@@ -1,14 +1,18 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useResolvedPath, useMatch } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import DelayLink from '../DelayLink/DelayLink';
 import './header.css';
 import Logo from '../../assets/Logo.png';
 
-export default function Header({ currentState, overlay, height }) {
+export default function Header({ currentState, overlay, height, changeLocation }) {
     const [currentNavbar, setNavbar] = useState(false)
     const [width, setWidth] = useState(window.document.documentElement.clientWidth)
     const [scrollPosition, setScrollPosition] = useState(0)
     const header = useRef(null)
-
+    
+   
+    
     const showNav = () => {
         setNavbar(!currentNavbar)
         currentState(!currentNavbar)
@@ -51,9 +55,9 @@ export default function Header({ currentState, overlay, height }) {
                     <div></div>
                 </div>
                 <nav className={currentNavbar ? 'navbar nav-active' : 'navbar'} style={width < 1080 ? {minHeight: height} : {minHeight: 'auto'}}>
-                    <CustomLink to="/" className='active' onClick={showNav}>HOME</CustomLink>     
-                    <CustomLink to="/portfolio" onClick={showNav}>PORTFOLIO</CustomLink>     
-                    <CustomLink to="/contact" onClick={showNav}>CONTACT US</CustomLink>     
+                    <CustomLink delay={400} to="/" className='active' onClick={showNav} onDelayStart={() => changeLocation('/')}>HOME</CustomLink>     
+                    <CustomLink delay={400} to="/portfolio" onClick={showNav} onDelayStart={() => changeLocation('/portfolio')}>PORTFOLIO</CustomLink>     
+                    <CustomLink delay={400} to="/contact" onClick={showNav} onDelayStart={() => changeLocation('/contact')}>CONTACT US</CustomLink>     
                 </nav>
             </header>
         </div>
@@ -63,5 +67,5 @@ export default function Header({ currentState, overlay, height }) {
 function CustomLink({ to, children, ...props }) {
     const activePath = useResolvedPath(to)
     const isActive = useMatch({ path: activePath.pathname, end: true })
-    return <Link to={to} {...props} className={isActive ? "active" : ""}>{children}</Link>
+    return <DelayLink to={to} {...props} className={isActive ? "active" : ""}>{children}</DelayLink>
 }

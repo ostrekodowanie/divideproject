@@ -4,15 +4,18 @@ import Home from './pages/Home/Home';
 import Portfolio from './pages/Portfolio/Portfolio';
 import Contact from './pages/Contact/Contact';
 import './sass/App.css';
+import D from './assets/D.svg';
 import { Routes, Route } from 'react-router-dom';
 import { useLocation } from 'react-router';
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 
 export default function App() {
   const [overlayActive, setOverlay] = useState(false)
 
   let screenHeight = window.document.documentElement.clientHeight
   const [height, setHeight] = useState(screenHeight)
+
+  const [location, setLocation] = useState()
 
   const currentState = (navbarState) => {
     setOverlay(navbarState)
@@ -21,6 +24,10 @@ export default function App() {
   const disableNav = useCallback(() => {
     setOverlay(false)
   }, [])
+
+  const changeLocation = location => {
+    setLocation(location)
+  }
   
   const heightCallback = () => {
       screenHeight = window.document.documentElement.clientHeight
@@ -36,10 +43,11 @@ export default function App() {
 
   return (
     <div className="wrapper">
-      <Header currentState={currentState} overlay={overlayActive} height={height} />
+      <Transitioner location={location} />
+      <Header changeLocation={changeLocation} currentState={currentState} overlay={overlayActive} height={height} />
       <main>
         <div className={overlayActive ? "overlay active" : "overlay"} onClick={disableNav} onTouchMove={disableNav}></div>
-        <ScrollToTop disableNav={disableNav}>
+        <ScrollToTop disableNav={disableNav} changeLocation={changeLocation}>
           <Routes>
             <Route path="/" element={<Home overlay={overlayActive} height={height} />} />
             <Route path="/portfolio" element={<Portfolio overlay={overlayActive} height={height} />} />
@@ -52,7 +60,7 @@ export default function App() {
   );
 }
 
-const ScrollToTop = ({ children, disableNav }) => {
+const ScrollToTop = ({ children, disableNav, changeLocation }) => {
   const location = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -60,4 +68,23 @@ const ScrollToTop = ({ children, disableNav }) => {
   }, [location, disableNav]);
 
   return <>{children}</>
+}
+
+function Transitioner({ location }) {
+  const [isActive, setActive] = useState(false)
+  const timer = useRef()
+
+  useEffect(() => {
+    clearTimeout(timer.current)
+    setActive(true)
+    timer.current = setTimeout(() => {
+      setActive(false)
+    }, 500)
+  }, [location])
+
+  return (
+      <div className="transitioner" style={isActive ? {transform: 'scaleX(100%)', transformOrigin: 'left'} : {transform: 'scaleX(0%)', transformOrigin: 'right'}}>
+          <img src={D} alt='' />
+      </div>
+  )
 }
