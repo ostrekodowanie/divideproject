@@ -60,15 +60,17 @@
   max-height: 0.9em;
   margin-left: 0.5em;
 }
-.form .send {
+
+.send {
   margin-top: 0.6em;
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
   justify-content: space-between;
-  color: green;
+}
+.send .alert {
   font-weight: 500;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .horizontal-line {
@@ -131,6 +133,11 @@
     padding: 0.6em 2.5em;
     font-size: 1.1rem;
     align-self: flex-start;
+  }
+
+  .send .alert {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
   }
 
   .horizontal-line {

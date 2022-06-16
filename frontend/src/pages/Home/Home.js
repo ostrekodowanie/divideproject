@@ -20,7 +20,7 @@ export default function Home({height}) {
     )
 }
 
-function Landing({ height, location }) {
+function Landing({ height }) {
     const title = useRef(null)
     const buttons = useRef(null)
 
@@ -45,8 +45,8 @@ function Landing({ height, location }) {
                     <span className="line-wrapper"><span className="line">experiences.</span></span>
                 </h1>
                 <div ref={buttons} className="main-buttons">
-                    <Link to="/contact-us">CONTACT US<img src={buttonArrow} alt="" /></Link>
-                    <Link to="/portfolio">VIEW PORTFOLIO</Link>
+                    <Link to="/contact">START A PROJECT<img src={buttonArrow} alt="" /></Link>
+                    <Link to="/portfolio"><span>VIEW PORTFOLIO</span><div className='button-background'></div></Link>
                 </div>
             </div>
             <div className="landing-logo">
@@ -58,7 +58,7 @@ function Landing({ height, location }) {
 }
 
 function Description() {
-    const desc = useRef(null)
+    const desc = useRef()
     gsap.registerPlugin(ScrollTrigger)
 
     useEffect(() => {
@@ -77,7 +77,7 @@ function Description() {
         <section className="section s-description">
             <div ref={desc} className="description">
                 <img src={www} alt="" />
-                <p>We create professionally made websites that can be the future of your brands. Your project is the most important part of our company.</p>
+                <p>We create professional, dynamic and responsive websites fully adapted to the needs of your business or project. We would like to invite you to cooperate with us.</p>
             </div>
         </section>
     )
@@ -90,12 +90,12 @@ function Advantages() {
                 <div className="advantage-div">
                     <img src={advOne} alt="" />
                     <h2>We are self studied</h2>
-                    <p>As a result of that we have gained a deep understanding of the most of the web concepts out there and we are able to create estetic and accessible layouts with our knowledge.</p>
+                    <p>As a result of that we have gained a deep understanding of the most web concepts out there and we are able to create estetic and accessible layouts with our knowledge.</p>
                 </div>
                 <div className="advantage-div">
                 <img src={advTwo} alt="" />
                     <h2>Our abilities</h2>
-                    <p>Our capabilities allow us to create a website that is fully tailored to the needs of your Company.</p>
+                    <p>Our capabilities allow us to create a website that is fully tailored to the needs of your company.</p>
                 </div>
             </div>
         </section>

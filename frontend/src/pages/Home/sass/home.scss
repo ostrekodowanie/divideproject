@@ -107,8 +107,32 @@
         }
     }
     a:last-child {
+        position: relative;
+        overflow: hidden;
         border: 1px solid rgba($primary, 0.4);
         color: $primary;
+        .button-background {
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 150ms ease-out;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background-color: $primary;
+        }
+        &:hover {
+            color: $light;
+            .button-background {
+                transform: scaleX(1);
+            }
+            span {
+                transition: color 150ms ease-out;
+                position: relative;
+                z-index: 1;
+            }
+        }
     }
 }
 
@@ -246,7 +270,7 @@
         p {
             font-size: 1.3rem;
             line-height: 2em;
-            max-width: 6in;
+            max-width: 6.5in;
         }
     }
     .advantages-grid {

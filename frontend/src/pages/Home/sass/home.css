@@ -103,8 +103,32 @@
   transition: opacity 300ms ease-out 40ms;
 }
 .main-buttons a:last-child {
+  position: relative;
+  overflow: hidden;
   border: 1px solid rgba(58, 134, 255, 0.4);
   color: #3A86FF;
+}
+.main-buttons a:last-child .button-background {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 150ms ease-out;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #3A86FF;
+}
+.main-buttons a:last-child:hover {
+  color: #FFFFFF;
+}
+.main-buttons a:last-child:hover .button-background {
+  transform: scaleX(1);
+}
+.main-buttons a:last-child:hover span {
+  transition: color 150ms ease-out;
+  position: relative;
+  z-index: 1;
 }
 
 .main-buttons.active a {
@@ -243,7 +267,7 @@
   .description p {
     font-size: 1.3rem;
     line-height: 2em;
-    max-width: 6in;
+    max-width: 6.5in;
   }
 
   .advantages-grid {
