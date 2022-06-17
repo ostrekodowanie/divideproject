@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useResolvedPath, useMatch } from 'react-router-dom';
-import D from '../../assets/D.svg';
+import D from '../../assets/D.png';
 import DelayLink from '../DelayLink/DelayLink';
 import './header.css';
 import Logo from '../../assets/Logo.png';
@@ -93,7 +93,7 @@ function Transitioner({ location }) {
   
     return (
         <div className="transitioner" style={isActive ? {transform: 'scaleX(100%)', transformOrigin: 'left'} : {transform: 'scaleX(0%)', transformOrigin: 'right'}}>
-            <img src={D} style={{filter: 'invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%)'}} alt='' />
+            <img src={D} alt='' />
         </div>
     )
   }
