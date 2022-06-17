@@ -71,7 +71,7 @@
     gap: min(6vw, 2.5rem);
     a {
         opacity: 0;
-        transition: opacity 600ms ease-out 600ms;
+        transition: opacity 600ms ease-out 1000ms;
         text-decoration: none;
         padding: .5em 1em; 
         border-radius: .2em;
@@ -83,7 +83,7 @@
         position: relative;
         display: flex;
         align-items: center;
-        transition: padding-right 150ms ease-out, opacity 600ms ease-out 400ms;
+        transition: padding-right 150ms ease-out, opacity 600ms ease-out 900ms;
         img {
             position: absolute;
             right: 1em;

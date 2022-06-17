@@ -25,7 +25,7 @@ function Landing({ height }) {
 
     useEffect(() => {
         let lines = title.current.querySelectorAll('.line')
-        let delayCounter = lines.length
+        let delayCounter = lines.length + 3.5
         lines.forEach(line => {
             line.classList.remove('line-active')
             line.classList.add('line-active')
