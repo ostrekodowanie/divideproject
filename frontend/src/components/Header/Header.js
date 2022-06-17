@@ -93,7 +93,7 @@ function Transitioner({ location }) {
   
     return (
         <div className="transitioner" style={isActive ? {transform: 'scaleX(100%)', transformOrigin: 'left'} : {transform: 'scaleX(0%)', transformOrigin: 'right'}}>
-            <img src={D} alt='' />
+            <img src={D} style={{filter: 'invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%)'}} alt='' />
         </div>
     )
   }
